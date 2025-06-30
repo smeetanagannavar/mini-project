@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D boxes background</title>
+    <style>
+        body {
+        margin: 0;
+        background-color: #111;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        font-family: sans-serif;
+      }
+
+      .magic {
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        border: none;
+        background-color: #f39c12;
+        color: white;
+        cursor: pointer;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        transition: background 0.3s;
+      }
+
+      .magic:hover {
+        background-color: #e67e22;
+      }
+
+      .boxes {
+        width: 500px;
+        height: 500px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        position: relative;
+        transition: transform 0.5s;
+        transform-style: preserve-3d;
+      }
+
+      .boxes.big {
+        transform: rotateZ(360deg);
+      }
+
+      .box {
+        width: 125px;
+        height: 125px;
+        background-image: url('https://media.giphy.com/media/EZqwsBSPlvSda/giphy.gif');
+        background-size: 500px 500px;
+        transition: transform 0.5s;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      }
+
+    </style>
+  </head>
+  <body>
+    <button id="btn" class="magic">magic</button>
+    <div id="boxes" class="boxes big"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
